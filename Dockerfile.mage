@@ -1,0 +1,4 @@
+FROM mageai/mageai:latest
+
+RUN pip install --no-cache-dir --force-reinstall SQLAlchemy==1.4.54 urllib3==1.26.20 \
+    && python -c "from sqlalchemy import or_, and_, create_engine; from urllib3.exceptions import HTTPError; import requests; print('SQLAlchemy, urllib3 and requests: OK')"
